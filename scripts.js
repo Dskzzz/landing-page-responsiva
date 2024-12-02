@@ -29,5 +29,21 @@ links.forEach(link => {
     });
 });
 
+const menuHamburger = document.getElementById('menu-hamburger');
+const nav = document.getElementById('nav');
+const navLinks = document.querySelector('.nav-links');
+
+menuHamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    toggleHamburgerAnimation();
+});
+
+function toggleHamburgerAnimation() {
+    menuHamburger.querySelectorAll('span').forEach((span, index) => {
+        span.classList.toggle(`span${index + 1}`);
+    });
+}
+
 
 
