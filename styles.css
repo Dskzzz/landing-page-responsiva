@@ -1,0 +1,840 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black; /* Cor de fundo escuro */
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: black; /* Cor de fundo escuro */
+    color: white;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000; /* Fundo preto */
+    padding: 20px 40px; /* Aumenta o tamanho do menu */
+}
+
+header .logo {
+    display: flex;
+    justify-content: flex-start; /* Alinha logo à esquerda */
+    align-items: center;
+    margin-right: auto; /* Garante que a logo fique no canto esquerdo */
+}
+
+header .logo img {
+    height: 50px; /* Aumenta o tamanho da logo */
+    transition: height 0.3s ease; /* Transição suave */
+}
+
+.logo h1 {
+    color: white;
+    margin: 0;
+    font-size: 30px; /* Aumenta o tamanho do texto */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px; /* Aumenta o espaço entre os itens no desktop */
+    margin: 0;
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.nav-item {
+    color: white; /* Texto branco */
+    text-decoration: none;
+    font-size: 20px; /* Aumenta o tamanho da fonte */
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: #ffa500; /* Hover laranja */
+}
+
+/* Menu Hambúrguer */
+.menu-hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-hamburger span {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    transition: background-color 0.3s, transform 0.3s, opacity 0.3s;
+}
+
+.menu-hamburger:hover span {
+    background-color: #ffa500; /* Hover laranja */
+}
+
+.menu-hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Estilos para Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background-color: #000; /* Fundo preto */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        transform: translateX(100%);
+        transition: transform 0.3s;
+        z-index: 1;
+        align-items: center; /* Centraliza os itens */
+        padding-top: 20px; /* Adiciona espaçamento */
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .nav-item {
+        padding: 15px 0; /* Espaçamento entre os itens */
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-hamburger {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .nav.open {
+        display: block;
+    }
+
+    .nav-links.open {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+}
+
+
+/* Animação do Header */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    background-color: black; /* Cor de fundo escura na container */
+    padding: 30px;
+    width: 85vw;
+    height: 82vh; /* Aumenta um pouco a altura */
+    display: flex;
+    flex-direction: row; /* Alinha elementos em linha */
+    margin: 0 auto;
+    animation: fadeIn 1s ease-in-out;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre h1, p e social icons */
+    width: 50%; /* Ajuste para dividir o espaço igualmente */
+    padding-left: 20px; /* Espaço à esquerda */
+    box-sizing: border-box;
+    color: white; /* Adiciona cor branca ao texto */
+}
+
+.container h1 {
+    background-color: rgb(0, 0, 0); /* Fundo escuro no título */
+    padding: 10px;
+    margin: 0; /* Remove margem para alinhamento preciso */
+    font-size: 40px; /* Diminui tamanho do texto */
+    text-align: left;
+    color: white; /* Texto branco */
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.container p {
+    background-color: black; /* Fundo escuro no parágrafo */
+    padding: 10px;
+    margin: 0; /* Remove margem para alinhamento preciso */
+    padding-bottom: 10px;
+    font-size: 1rem; /* Diminui tamanho do texto */
+    max-width: 100%;
+    color: white; /* Texto branco */
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 0; /* Remove margem para alinhamento preciso */
+    color: white; /* Adiciona cor branca ao texto */
+}
+
+.social-icon i {
+    font-size: 30px; /* Diminui tamanho do ícone */
+    color: white; /* Texto branco */
+    margin: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover i {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.testimonial-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%; /* Ajuste para dividir o espaço igualmente */
+    padding-right: 20px; /* Espaço à direita */
+    box-sizing: border-box;
+}
+
+.testimonial-carousel img {
+    background-color: #000000; /* Cor de fundo escura na imagem */
+    width: 30vw; /* Ajusta a largura para caber no layout */
+    height: 40vh; /* Ajusta a altura para caber no layout */
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Sombra branca mais suave */
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 1024px) { /* Para tablets */
+    .container {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        width: 100vw;
+        height: auto;
+        padding: 20px;
+        color: white; /* Adiciona cor branca ao texto */
+    }
+
+    .container .content,
+    .testimonial-carousel {
+        width: 100%; /* Ajusta para largura total em telas menores */
+        padding: 0; /* Remove espaçamento lateral */
+        color: white; /* Adiciona cor branca ao texto */
+    }
+
+    .container h1 {
+        font-size: 32px; /* Ajusta tamanho do texto para telas menores */
+        text-align: center;
+        color: white; /* Texto branco */
+    }
+
+    .container p {
+        font-size: 0.9rem; /* Ajusta tamanho do texto para telas menores */
+        text-align: center;
+        color: white; /* Texto branco */
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 20px;
+        color: white; /* Adiciona cor branca ao texto */
+    }
+
+    .testimonial-carousel img {
+        width: 80vw;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) { /* Para dispositivos móveis */
+    .container {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        width: 100vw;
+        height: auto;
+        padding: 20px;
+        color: white; /* Adiciona cor branca ao texto */
+    }
+
+    .container .content,
+    .testimonial-carousel {
+        width: 100%; /* Ajusta para largura total em telas menores */
+        padding: 0; /* Remove espaçamento lateral */
+        color: white; /* Adiciona cor branca ao texto */
+    }
+
+    .container h1 {
+        font-size: 32px; /* Ajusta tamanho do texto para telas menores */
+        text-align: center;
+        color: white; /* Texto branco */
+    }
+
+    .container p {
+        font-size: 0.9rem; /* Ajusta tamanho do texto para telas menores */
+        text-align: center;
+        color: white; /* Texto branco */
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 20px;
+        color: white; /* Adiciona cor branca ao texto */
+    }
+
+    .testimonial-carousel img {
+        width: 80vw;
+        height: auto;
+    }
+}
+
+/* Estilo para o Placeholder do Produto */
+.product-placeholder {
+    width: 250px; /* Tamanho reduzido */
+    padding: 10px;
+    background-color: #444; /* Cor de fundo do placeholder */
+    color: white;
+    border: 1px solid #555;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para o Placeholder quando o campo está vazio */
+.product-placeholder::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.btn-light-dark {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* Sombra branca mais suave no texto padrão (corpo e cabeçalhos) */
+body, .container p, .contact-form h2, .container h1 {
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Sombra branca mais suave */
+}
+
+/* Sombra branca mais suave no texto das seções específicas */
+h1, h2, h3, p {
+    text-shadow: 0 2px 5px rgba(255, 255, 255, 0.2); /* Sombra branca suave */
+}
+
+/* Estilos do formulário */
+.contact-form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out; /* Animação suave de aparecimento */
+}
+
+/* Animação suave de aparecimento */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos do formulário */
+.contact-form h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para inputs e textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease; /* Animação de transição suave */
+    animation: fadeIn 1.2s ease-in-out; /* Animação de desvanecimento */
+}
+
+/* Animação de desvanecimento */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007BFF;
+    background-color: #e9f5ff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+    animation: zoomIn 0.3s ease-in-out; /* Animação de zoom */
+}
+
+/* Animação de zoom */
+@keyframes zoomIn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Estilo para o botão de envio */
+.contact-form button {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Efeito de transição ao passar o mouse */
+    animation: float 2s infinite ease-in-out; /* Efeito de flutuação */
+}
+
+/* Efeito de flutuação */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* Mudança de cor quando o botão é hover */
+}
+
+.contact-form button:active {
+    background-color: #003f7f; /* Mudança de cor ao clicar */
+    animation: highlight 0.5s ease-out; /* Animação de destaque */
+}
+
+/* Animação de destaque */
+@keyframes highlight {
+    0% { box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); }
+    100% { box-shadow: 0 0 0 rgba(0, 123, 255, 0); }
+}
+
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animação para o carrossel de depoimentos */
+.testimonial-carousel {
+    width: 10%;
+    margin-left: 400px;
+    margin-right: 400px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+/* Animação para os depoimentos individuais */
+.testimonial-carousel p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.testimonials {
+    height: auto;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.testimonials h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #333;
+    animation: slideInFromTop 1s ease-in-out;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.testimonial {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    width: 350px;
+    min-height: 400px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.8s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.testimonial h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #555;
+}
+
+.testimonial p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Animação de fade-in para os depoimentos */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de slide-in de cima para o título */
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação para o carrossel de depoimentos */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000; /* Cor de fundo do footer */
+    margin-top: 50px;
+}
+
+footer .social-icons img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .testimonial-carousel {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.video-section {
+    background-color: #f4f4f4; /* Cor de fundo suave para a seção */
+    padding: 80px 20px; /* Aumentando o espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo */
+    position: relative;
+    animation: fadeInUp 1.5s ease-out; /* Animação de entrada */
+}
+
+.video-container {
+    background-color: #fff; /* Fundo branco para o container */
+    padding: 50px; /* Aumentando o espaçamento interno */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor */
+    display: inline-block; /* Faz com que o conteúdo do vídeo se ajuste ao tamanho do iframe */
+    animation: zoomIn 1.5s ease-out; /* Animação de zoom */
+    width: 100%; /* Garantindo que o container ocupe 100% da largura disponível */
+    max-width: 1200px; /* Limita a largura máxima para 1200px */
+    margin: 0 auto; /* Centraliza a div */
+}
+
+.video-title {
+    font-size: 2.5em; /* Tamanho do título maior */
+    color: #333; /* Cor do título */
+    margin-bottom: 30px; /* Aumentando a distância abaixo do título */
+    animation: slideIn 1s ease-out; /* Animação de entrada para o título */
+}
+
+iframe {
+    width: 100%; /* Ajustando o iframe para ocupar toda a largura disponível do container */
+    height: 600px; /* Definindo uma altura maior para o vídeo */
+    border-radius: 8px; /* Bordas arredondadas no vídeo */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 1024px) { /* Para tablets */
+    .video-section {
+        padding: 60px 20px; /* Ajusta o espaçamento interno */
+    }
+    
+    .video-title {
+        font-size: 2em; /* Reduz o tamanho do título */
+    }
+
+    iframe {
+        height: 500px; /* Reduz a altura do vídeo */
+    }
+}
+
+@media (max-width: 768px) { /* Para dispositivos móveis */
+    .video-section {
+        padding: 40px 20px; /* Ajusta o espaçamento interno */
+    }
+    
+    .video-container {
+        padding: 30px; /* Reduz o espaçamento interno */
+    }
+
+    .video-title {
+        font-size: 1.5em; /* Reduz o tamanho do título */
+        margin-bottom: 20px; /* Ajusta a distância abaixo do título */
+    }
+
+    iframe {
+        height: 300px; /* Reduz a altura do vídeo */
+    }
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 40px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding: 20px;
+        width: 100%;
+        height: auto;
+        background: url('images/imagem.jpg') no-repeat center center; /* Altere para o caminho correto */
+        background-size: cover; /* Faz a imagem ocupar todo o fundo proporcionalmente */
+        background-attachment: scroll; /* Mantém a imagem fixa durante o scroll */
+    }
+
+    .testimonial-carousel img {
+    display: none;
+    }
+
+    .container h1 {
+        color: rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0);
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .container p {
+        font-size: 20px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+
+    .social-icons {
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .contact-form-container {
+        padding: 15px;
+    }
+
+    .contact-form h2 {
+        font-size: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+/* Estilos para telas menores que 480px (celulares pequenos) */
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .container p {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .testimonial-carousel img {
+        display: none;
+    }
+
+    .social-icons a i {
+        font-size: 30px;
+    }
+
+    .contact-form h2 {
+        font-size: 18px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 12px;
+    }
+
+    .contact-form button {
+        font-size: 14px;
+    }
+}
