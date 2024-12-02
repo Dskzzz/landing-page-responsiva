@@ -3,46 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Transforme sua vida com o melhor produto do mercado! Descubra inovação e qualidade para melhorar seu dia a dia.">
-    <meta name="keywords" content="produto, inovação, qualidade, transformação, cursos">
-    <meta name="author" content="Seu Nome">
-    <title>Melhor Produto do Mercado - Transforme sua Vida</title>
-    
-    <!-- Pré-carregamento de fontes -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    
-    <!-- Pré-carregamento de imagens -->
-    <link rel="preload" href="images/imagem.jpg" as="image">
-    <link rel="preload" href="images/depoimento-1.jpg" as="image">
-    <link rel="preload" href="images/depoimento-2.jpg" as="image">
-    <link rel="preload" href="images/depoimento-3.jpg" as="image">
-    
-    <!-- CSS -->
+    <title>Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <h1>Nome do Site</h1>
-        </div>
-        <div class="menu-hamburger" id="menu-hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <nav class="nav" id="nav">
-            <ul class="nav-links">
-                <li><a href="#sobre-nos" class="nav-item">Sobre nós</a></li>
-                <li><a href="#feedbacks" class="nav-item">Feedbacks</a></li>
-                <li><a href="#contato" class="nav-item">Contate-nos</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Landing Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="logo">
+                <h1>Nome do Site</h1>
+            </div>
+            <div class="menu-hamburger" id="menu-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav" id="nav">
+                <ul class="nav-links">
+                    <li><a href="#sobre-nos" class="nav-item">Sobre nós</a></li>
+                    <li><a href="#feedbacks" class="nav-item">Feedbacks</a></li>
+                    <li><a href="#contato" class="nav-item">Contate-nos</a></li>
+                </ul>
+            </nav>
+        </header>
+    </body>
+    </html>
     <section class="container" id="sobre-nos">
         <div class="text-content">
             <h1>Transforme sua vida com o melhor produto do mercado!</h1>
@@ -63,9 +57,45 @@
             <img src="images/imagem.jpg" alt="Imagem do Produto">
         </div>
     </section>
+    
 
     <div class="testimonials" id="feedbacks">
-        <!-- Depoimentos já existentes -->
+        <h2>O que estão falando do nosso curso?</h2>
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <img src="images/depoimento-1.jpg" alt="Fotos de Matheus Oliveira">
+                <h3>Matheus Oliveira</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>
+                    Eu achei muito bom o curso, porque com ele eu consegui um emprego que me
+                    paga mais de 5 mil reais. Além disso, comecei a montar um projeto paralelo
+                    com o conhecimento que adquiri e que já está me rendendo uma boa grana.
+                    O curso superou minhas expectativas e mudou minha vida para melhor.
+                </p>
+            </div>
+            <div class="testimonial">
+                <img src="images/depoimento-2.jpg" alt="Foto de Ana Carolina">
+                <h3>Ana Carolina</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>
+                    Sem dúvidas, foi uma das melhores decisões que já tomei. Consegui um emprego
+                    excelente, que paga muito bem, e ainda aprendi a criar um projeto paralelo
+                    que já está gerando resultados incríveis. Recomendo o curso para quem deseja
+                    transformar sua vida profissional.
+                </p>
+            </div>
+            <div class="testimonial">
+                <img src="images/depoimento-3.jpg" alt="Fotos de Daniela">
+                <h3>Daniela Almeida</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>
+                    Antes do curso, eu não tinha noção de como alcançar meus objetivos
+                    profissionais. Agora, não só consegui um ótimo emprego, como também
+                    iniciei um projeto pessoal que está me trazendo renda extra. Esse curso
+                    é realmente transformador e vale cada centavo.
+                </p>
+            </div>
+        </div>
     </div>
 
     <section class="video-section">
@@ -79,16 +109,40 @@
             </iframe>
         </div>
     </section>
-
-    <div class="contact-form-container" id="contato">
-        <!-- Formulário de contato já existente -->
+    
+    <div class="contact-form-container">
+        <div class="contact-form" id="contato">
+            <h2>Entre em Contato</h2>
+            <form>
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu Email" required>
+                <textarea placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="scripts.js" async></script>
+    <script src="script.js"></script>
+    <script>
+const menuHamburger = document.getElementById('menu-hamburger');
+const nav = document.getElementById('nav');
+const navLinks = document.querySelector('.nav-links');
+
+menuHamburger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    navLinks.classList.toggle('open');
+    toggleHamburgerAnimation();
+});
+
+function toggleHamburgerAnimation() {
+    menuHamburger.querySelectorAll('span').forEach((span, index) => {
+        span.classList.toggle(`span${index + 1}`);
+    });
+}
+    </script>
 </body>
 </html>
